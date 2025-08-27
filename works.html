@@ -76,26 +76,51 @@ body{
     transform: scale(1.2);
 }
 
-.card1 {
+
+.works{
+    width: 1200px;
     display: flex;
-    justify-content: center;
-    justify-content: space-between;
-    padding-left: 40px;
-    padding: 40px;
+    overflow-x: scroll;
 }
-.card2 {
+
+.works .card1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+    flex: none;
+}
+
+.card1  img {
+    width: 100%;
+    transition: transform 0.5s;
+}
+
+.card1  img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.works::-webkit-scrollbar{
+    display: none;
+}
+
+.works-wrap i {
+    color: #f13574;
+    background-color: #101010;
+    padding: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 40px;
+}
+
+.works-wrap{
     display: flex;
+    align-items: center;
     justify-content: center;
-    justify-content: space-between;
-    padding-left: 40px;
-    padding: 40px;
+    margin: 10% auto;
 }
-
-.work img {
-    border-radius: 20px;
-
-}
-
 
 footer{
     position: relative;
@@ -167,49 +192,53 @@ footer p:nth-child(2){
             </nav>
             <button class="btn1">Hire me</button>
         </section>
-        <section class="works">
-            <h2>MY WORKS</h2>
-            <div class="card1">
-                <div class="work">
-                   <a href="https://taofeek05.github.io/twilia/">
-                    <img src="Images/work1.png" alt="" height="300px" width="400px">
-                   </a>
-                    <p>This a twitter signup page prototype</p>
-                </div>
-                <div class="work">
-                    <a href="https://taofeek05.github.io/project5/">
-                        <img src="Images/work4.png" alt="" height="300px" width="400px">
-                       </a>
-                        <p></p>
-                </div>
-                <div class="work">
-                    <a href="https://taofeek05.github.io/form1/">
-                        <img src="Images/work3.png" alt="" height="300px" width="400px">
-                       </a>
-                        <p></p>
-                </div>
+
+        <div class="works-wrap">
+            <div id="backBtn">
+               <i class="fa-solid fa-angle-left"></i>
             </div>
-            <div class="card2">
-                <div class="work">
-                    <a href="https://taofeek05.github.io/project4/">
-                        <img src="Images/work7.png" alt="" height="300px" width="400px">
-                       </a>
-                        <p></p>
-                </div>
-                <div class="work">
-                    <a href="https://taofeek05.github.io/project3/">
-                        <img src="Images/work5.png" alt="" height="300px" width="400px">
-                       </a>
-                        <p></p>
-                </div>
-                <div class="work">
-                    <a href="https://taofeek05.github.io/project2/">
-                        <img src="Images/work6.png" alt="" height="300px" width="400px">
-                       </a>
-                        <p></p>
-                </div>
+            <div class="works">        
+                <div class="card1">
+                    <a href="https://taofeek05.github.io/twilia/">
+                     <img src="Images/work1.png" alt="" height="" width="">
+                    </a>
+                     <a href="https://taofeek05.github.io/project5/">
+                         <img src="Images/work4.png" alt="" height="" width="">
+                     </a>
+                     <a href="https://taofeek05.github.io/form1/">
+                         <img src="Images/work3.png" alt="" height="" width="">
+                     </a>
+                 </div>
+                 <div class="card1"> 
+                     <a href="https://taofeek05.github.io/project4/">
+                         <img src="Images/work7.png" alt="" height="" width="">
+                        </a>
+                     <a href="https://taofeek05.github.io/project3/">
+                         <img src="Images/work5.png" alt="" height="" width="">
+                        </a>
+                     <a href="https://taofeek05.github.io/project2/">
+                         <img src="Images/work6.png" alt="" height="" width="">
+                     </a>
+                 </div> 
+                 <div class="card1">
+                     <a href="https://taofeek05.github.io/project6/">
+                         <img src="Images/work8.png" alt="" height="" width="">
+                        </a>
+                     <a href="https://taofeek05.github.io/form2/">
+                         <img src="Images/work9.png" alt="" height="" width="">
+                        </a>
+                     <a href="https://taofeek05.github.io/project7/">
+                         <img src="Images/work2.png" alt="" height="" width="">
+                        </a>
+                 </div>
+             
+             </div> 
+             
+            <div id="nextBtn">
+                <i class="fa-solid fa-angle-right"></i>
             </div>
-        </section>    
+        </div>
+          
     </section>
 
     <footer>
@@ -222,6 +251,31 @@ footer p:nth-child(2){
         </div>
         <p class="end">CopyRight By Abiona Taofeek</p>
     </footer>
+
+<script>
+
+
+    let scrollContainer = document.querySelector(".works");
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
+
+    scrollContainer,addEventListener("wheel", (evt) =>{
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        scrollContainer.style.scrollBehaviour = "auto";
+    });
+
+    nextBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehaviour = "smooth";
+        scrollContainer.scrollLeft += 900;
+    });
+
+    backBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehaviour = "smooth";
+        scrollContainer.scrollLeft -= 900;
+    });
+</script>
     
 
-        
+</body>
+</html>   
