@@ -16,11 +16,19 @@
     <section class="biggie">
         <section class="header">
             <nav>
-                <ul>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
                     <li><a href="/index.html">HOME</a></li>
                     <li><a href="/works.html">MY WORKS</a></li>
                     <li><a href="#">CONTACT ME</a></li>
                     <li><a href="#">CERTIFICATES</a></li>
+                </ul>
+                <ul>
+                    <li class="hideOnMobile"><a href="/index.html">HOME</a></li>
+                    <li class="hideOnMobile"><a href="/works.html">MY WORKS</a></li>
+                    <li class="hideOnMobile"><a href="#">CONTACT ME</a></li>
+                    <li class="hideOnMobile"><a href="#">CERTIFICATES</a></li>
+                    <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
                 </ul>
                 
             </nav>
@@ -95,6 +103,21 @@
         </div>
         <p class="end">CopyRight By Abiona Taofeek</p>
     </footer>
+
+    <script>
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+            
+            
+        }
+
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+            
+        }
+    </script>
 
 </body>
 </html>
