@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY_WORKS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/5fc54fdf94.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
     <style>
@@ -21,12 +21,13 @@
 body{
     background: #101010;
     min-height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .biggie {
     background-image: url(Images/image5.jpg);
     background-position: center;
-    height: 40rem;
+    height: 80rem;
     
 }
 
@@ -91,6 +92,12 @@ body{
     padding: 0 40px;
     align-items: center;
     font-size: 15px;
+}
+
+@media (max-width: 1200px) {
+    .header nav ul li a{
+        padding: 0 15px;
+    }
 }
 
 @media (max-width: 430px) {
@@ -187,53 +194,94 @@ body{
     transform: scale(1.2);
 }
 
-
-
-.works{
-    width: 1200px;
-    display: flex;
-    overflow-x: scroll;
+.biggie h1{
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
 }
 
-.works .card1 {
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 20px;
-    padding: 10px;
-    flex: none;
+@media (max-width: 375px) {
+    .biggie h1{
+        text-align: center;
+        font-size: 20px;
+    }
 }
 
-.card1  img {
-    width: 100%;
-    border-radius: 14px;
-    transition: transform 0.5s;
+.container {
+  padding-top: 40px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card1  img:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+.slider {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.works::-webkit-scrollbar{
-    display: none;
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
-.works-wrap i {
-    color: #f13574;
-    background-color: #101010;
-    padding: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin: 40px;
+.slide {
+  min-width: 100%;
+  transition: opacity 0.5s;
 }
 
-.works-wrap{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10% auto;
+.slide img {
+  width: 100%;
+  display: block;
 }
+
+/* Navigation buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px;
+  color: #f13574;
+  font-weight: bold;
+  font-size: 24px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  user-select: none;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* Dots */
+.dots {
+  text-align: center;
+  padding: 10px;
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  display: inline-block;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #f13574;
+}
+
+
 footer{
     position: relative;
     width: 100%;
@@ -367,52 +415,77 @@ footer p:nth-child(2){
             </nav>
             <button class="btn1">Hire me</button>
         </section>
-        </section>
 
-        <div class="works-wrap">
-            <div id="backBtn">
-               <i class="fa-solid fa-angle-left"></i>
-            </div>
-            <div class="works">        
-                <div class="card1">
+        <h1>Here are some of my works</h1>
+
+        <div class="container">
+            <div class="slider">
+                <div class="slides">
+                  <!-- Each slide -->
+                  <div class="slide active">
                     <a href="https://taofeek05.github.io/twilia/">
-                     <img src="Images/work1.png" alt="" height="" width="">
+                        <img src="Images/work1.png">
                     </a>
-                     <a href="https://taofeek05.github.io/project5/">
-                         <img src="Images/work4.png" alt="" height="" width="">
-                     </a>
-                     <a href="https://taofeek05.github.io/form1/">
-                         <img src="Images/work3.png" alt="" height="" width="">
-                     </a>
-                 </div>
-                 <div class="card1"> 
-                     <a href="https://taofeek05.github.io/project4/">
-                         <img src="Images/work7.png" alt="" height="" width="">
-                        </a>
-                     <a href="https://taofeek05.github.io/project3/">
-                         <img src="Images/work5.png" alt="" height="" width="">
-                        </a>
-                     <a href="https://taofeek05.github.io/project2/">
-                         <img src="Images/work6.png" alt="" height="" width="">
-                     </a>
-                 </div> 
-                 <div class="card1">
-                     <a href="https://taofeek05.github.io/project6/">
-                         <img src="Images/work8.png" alt="" height="" width="">
-                        </a>
-                     <a href="https://taofeek05.github.io/form2/">
-                         <img src="Images/work9.png" alt="" height="" width="">
-                        </a>
-                     <a href="https://taofeek05.github.io/project7/">
-                         <img src="Images/work2.png" alt="" height="" width="">
-                        </a>
-                 </div>
-             
-             </div> 
-             
-            <div id="nextBtn">
-                <i class="fa-solid fa-angle-right"></i>
-            </div>
+                  </div>
+                  <div class="slide">
+                    <a href="https://taofeek05.github.io/project7/">
+                        <img src="Images/work2.png">
+                    </a>
+                  </div>
+                  <div class="slide">
+                    <a href="https://taofeek05.github.io/form1/">
+                        <img src="Images/work3.png">
+                    </a>
+                  </div>
+                  <div class="slide">
+                    <a href="https://taofeek05.github.io/project5/">
+                        <img src="Images/work4.png">
+                    </a>
+                  </div>
+                  <div class="slide">
+                    <a href="https://taofeek05.github.io/project3/">
+                        <img src="Images/work5.png">
+                    </a>
+                  </div>
+                  <div class="slide">
+                    <a href="https://taofeek05.github.io/project2/">
+                        <img src="Images/work6.png">
+                    </a>
+                  </div>
+                  <div class="slide">
+                    <a href="https://taofeek05.github.io/project4/">
+                        <img src="Images/work7.png">
+                    </a>
+                  </div>
+                  <div class="slide">
+                    <a href="https://taofeek05.github.io/project6/">
+                        <img src="Images/work8.png">
+                    </a>
+                  </div>
+                  <div class="slide">
+                    <a href="https://taofeek05.github.io/form2/">
+                        <img src="Images/work9.png">
+                    </a>
+                  </div>
+                </div>
+            
+                <!-- Navigation Arrows -->
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+            
+                <!-- Dots -->
+                <div class="dots">
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+              </div>
         </div>
 
     </section>
@@ -443,29 +516,53 @@ footer p:nth-child(2){
             
         }
 
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+let currentIndex = 0;
 
-    let scrollBar = document.querySelector(".works");
-    let backBtn = document.getElementById("backBtn");
-    let nextBtn = document.getElementById("nextBtn");
+function showSlide(index) {
+  if (index >= slides.length) currentIndex = 0;
+  if (index < 0) currentIndex = slides.length - 1;
 
-    scrollBar,addEventListener("wheel", (evt) =>{
-        evt.preventDefault();
-        scrollBar.scrollLeft += evt.deltaY;
-        scrollBar.style.scrollBehaviour = "auto";
-    });
+  slides.forEach((slide, i) => {
+    slide.style.display = (i === currentIndex) ? "block" : "none";
+  });
 
-    nextBtn.addEventListener("click", ()=>{
-        scrollBar.style.scrollBehaviour = "smooth";
-        scrollBar.scrollLeft += 900;
-    });
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentIndex);
+  });
+}
 
-    backBtn.addEventListener("click", ()=>{
-        scrollBar.style.scrollBehaviour = "smooth";
-        scrollBar.scrollLeft -= 900;
-    });
+// Next/Prev controls
+document.querySelector(".next").addEventListener("click", () => {
+  currentIndex++;
+  showSlide(currentIndex);
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+  currentIndex--;
+  showSlide(currentIndex);
+});
+
+// Dot controls
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    currentIndex = i;
+    showSlide(currentIndex);
+  });
+});
+
+// Auto play (optional)
+setInterval(() => {
+  currentIndex++;
+  showSlide(currentIndex);
+}, 4000);
+
+// Initialize
+showSlide(currentIndex);
 </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     
 
 </body>
